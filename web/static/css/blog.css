@@ -1,0 +1,166 @@
+/*cabeçálho*/
+div div#divhead{
+	width: 1024px;
+}
+div#divhead div.titulo{
+	width: 816px;
+	float: left;
+}
+div#divhead div.titulo a{
+	font: 99px arial, tahoma, sans-serif;
+	text-align: center;
+	color: #000000;
+	font-style: bold;
+	text-decoration: none;
+}
+div div.contatos{
+	width: 208px;
+	float: left;
+	margin-top: 20px;
+}
+div div div.contato-set{
+
+}
+div div div.contato-set a{
+	color: #6c686f;
+	display: table;
+	margin-bottom: 5px;
+}
+div div div.contato-set a span{
+	color: #6c686f;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+/*conteudo*/
+div#conteudo{
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+
+/*men categorias*/
+div.menusuperior{
+	width: 800px;
+	margin: 10px;
+}
+div.menusuperior ul {
+	display: inline;
+	list-style: none;
+	margin-left: 245px;
+	margin-right: auto;
+	padding: 0px;
+	width: 400px;
+}
+div.menusuperior ul.menu li.menu{
+	border-right:1px solid #c0c0c0;
+	display: inline;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	
+}
+div.menusuperior ul.menu li.menu{
+}
+div.menusuperior ul.menu li.menu a:hover{
+	background-color: #D6D6D6;
+	color:  #6D6D6D;
+}
+div.menusuperior ul.menu li.menu button:hover{
+	background-color: #D6D6D6;
+	color:  #6D6D6D;
+}
+div.menusuperior ul.menu li ul.smenu{
+	display: none;
+	margin: 0px;
+	padding: 0px;
+	top: 20px;
+	left: 0px;
+	position: absolute;
+
+}
+div.menusuperior ul.menu li ul.smenu li{
+	border:1px solid #c0c0c0; 
+	width: 100px;
+	left: 0px;
+	display: block;
+	text-align: left;
+	margin-left: 0px;
+}
+div.menusuperior ul.menu li:hover ul.smenu{
+	display: block;
+}
+li.menu{
+	width: 100px;
+}
+a.menu{
+	color:#333;
+	width: 100px;
+	height: 30px;
+	text-decoration: none;
+}
+button.bmenu{
+	color:#333;
+	width: 100px;
+	height: 30px;
+	text-decoration: none;
+}
+button.home{
+	color:#333;
+	width: 100px;
+	height: 30px;
+	text-decoration: none;
+}
+input.menu{
+	width: 100px;
+	height: 30px;
+}
+
+
+/*menu lateral*/
+div#menulateral{
+	margin-top: 30px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+div#calendario{
+	margin-top: 10px;
+}
+
+
+
+/*datepiker*/
+.mybold>a.ui-state-default {
+    font-weight:bold;
+    background-image: none ;
+    font-size: 12px;
+}
+.ui-state-active {
+	border: 1px solid #fbd850;
+	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;/*bold*/
+	color: #eb8f00;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus{
+	border: 1px solid #fbcb09;
+	background: #fdf5ce url(images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;/*bold*/
+	color: #c77405;
+}
+.ui-state-default {
+	border: 1px solid #cccccc;
+	background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;/*bold*/
+	color: #1c94c4;
+}
+div.ui-datepicker{
+ font-size:12px;
+}

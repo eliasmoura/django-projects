@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{%block head%}
+	{%block style%}
+		{{block.super}}
+		<script src="{{ STATIC_URL }}js/jquery-1.10.1.js"></script>
+		<script src="{{ STATIC_URL }}js/jquery-ui-1.10.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/ui-lightness/jquery-ui-1.10.3.css" />
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/blog.css" />
+		
+	{%endblock%}
+
+	{%block script%}
+	<script type="text/javascript">
+		var events = {};
+		events[new Date('06/20/2013')] = ['Valentines Day', 'mybold'];
+		events[new Date('07/19/2013')] = ['Payday', 'mybold'];
+		$(function() {
+					$("#divcalendario" ).datepicker({
+						beforeShowDay: function(date){
+							var event = events[date];
+            				if (event) {
+
+                				return [ true, 'mybold', event.text ];
+            				} else {
+                				return [ true, '', '' ];
+            				}
+						},
+						onSelect: function(data){
+							console.log(data);
+						},
+						minDate: new Date(2007, 1 - 1, 1),
+						macDate: "+1m +1w",
+						dayNamesShort: [ "Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab" ],
+						dateFormat: "dd/mm/yy",
+					});
+					
+				});
+		$(document).ready(function() {
+		$('button#home').click(function(){
+			location.href="{%url 'home'%}";
+		});
+		$('button.bmenu').click(function(){
+			{%url 'categoria' as the_url%}
+			var categoriaurl ='{{the_url}}'+$(this).attr('id');
+			console.log();
+			location.href=categoriaurl;
+		});
+	});
+	</script>
+	{%endblock%}
+
+	<title>{%block titulo%}{{block.super}} Blog{%endblock%}</title>
+
+{%endblock%}
+
+
+
+{%block divhead%}
+	<div class='titulo' id='titulo'>
+		<a href="/blog">AlMoura Blog</a>
+	</div>
+	<div class='contatos' id='contatos'>
+		<div class='contatos-links' id='contatos-links'>
+			<div class='contato-set'>
+				<a href="https://www.facebook.com/elias.alvesmoura"><img src="{{STATIC_URL}}imagens/logos/facebook_icon_25x25.png"><span>/elias.alvesmoura</span></a>
+			</div>
+			<div class='contato-set'>
+				<a href="https://twitter.com/elias_almoura"><img src="{{STATIC_URL}}imagens/logos/twitter-bird-light-bgs_25x25.png"><span>@elias_almoura</span></a>
+			</div>
+			<div class='contato-set'>
+				<a href="https://github.com/eliasmoura"><img src="{{STATIC_URL}}imagens/logos/github_icon_25x25.png"><span>/eliasmoura</span></a>
+			</div>
+			
+			
+		</div>
+	</div>
+{%endblock%}
+{%block  menusuperior%}
+	<ul class='menu'>
+		<li  class='menu'>
+			<button  id='home' class='home'>Home</button>
+		</li>
+		<li  class='menu'>
+			<button  id='projetos' class='bmenu' >Projetos</button>
+			<ul class='smenu' id='sprojetos'>
+				<li><button  id='simunares' class='bmenu' >SIMUNARES</button></li>
+				<li><button  id='django' class='bmenu' >Django</button></li>
+			</ul>
+		</li>
+		<li  class='menu'>
+			<button  id='programacao' class='bmenu'>Programação</button>
+			<ul class='smenu' id='sprogramação'>
+				<li><button  id='c++' class='bmenu'>C++</button></li>
+			</ul>
+		</li>
+	</ul>
+{%endblock%}
+{%block conteudo%}
+	<a  id='is' href="{%url 'categorias'%}">Home</a>
+	{%url 'categoria' 'ss' as the_url%}
+	{% if the_url %}
+  		<a href="{{ the_url }}">Link to optional stuff</a>
+	{% endif %}
+	{{the_url}}
+{%endblock%}
+
+{%block menulateral%}
+	<div class='sobre' id='sobre'>
+		Sobre o autor:
+		Um <br/>
+		breve<br/>
+		resumo<br/>
+		sobre<br/>
+		o<br/>
+		autor<br/>
+		link para o texto copleto.
+	</div>
+
+	<div class='calendario' id='calendario'>
+		Arquivo:
+		<div class='calendario' id='divcalendario' name='calendario' ><div>
+	</div>
+{%endblock%}

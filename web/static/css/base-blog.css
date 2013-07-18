@@ -1,0 +1,44 @@
+body{
+	background-color: #d0d0d0;
+}
+
+div#divhead {
+	/*background-image: url(/static/imagens/topo.png);*/
+	height:125px;
+	width: 1024px;
+	background-repeat:no-repeat;	
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 5px;
+	background-color: #f0f0f0;
+}
+
+div#conteudo {
+	/*background-image: url(/static/imagens/palco.png); */
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	width: 800px;
+	height: 728px;
+	float: left;
+	padding: 0px;
+	margin-top: 5px;
+}
+div#menuLateral{
+	width: 208px;
+	height: 500px;
+	padding: 5px;
+	float:right;
+	background-color: #f0f0f0;
+	
+}
+
+footer {
+	position: relative;
+}
+
+div#tudo{
+	margin-right:auto;
+    margin-left:auto;
+	width: 1024px;
+	display: block;
+}

@@ -1,0 +1,65 @@
+#menuLateral {
+	background-image: url(/static/imagens/fundo_controle.png) repeat-y scroll ;
+	height: 300px;
+	width: 200px;
+	float: left;
+	padding-top: 30px;
+	padding:0px;
+	margin:0px;
+}
+#id_doenca{
+	background-image: url(/static/imagens/bt_doenc.png);
+	min-width: 64px;
+	min-height: 21px;
+}
+
+#Iniciar {
+	background-image: url(/static/imagens/bt_inicio.png);
+}
+#direita {
+	background-image: url(/static/imagens/bt_vai.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 22px;
+	min-width:41px;
+}
+#esquerda {
+	background-image: url(/static/imagens/bt_volta.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 26px;
+	min-width:45px;
+}
+#menuLateral {
+	background-image: url(/static/imagens/fundo_controle.png);
+}
+canvas {
+	margin-right:auto;
+    margin-left:auto;
+}
+#descricao{
+	background-image: url(/static/imagens/inco_descr.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 39px;
+	min-width:49px;
+	display: none;
+}
+#relatorio{
+	background-image: url(/static/imagens/ico_relat.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 38px;
+	min-width:39px;
+}
+#volume{
+	background-image: url(/static/imagens/ico_som.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 34px;
+	min-width:46px;
+}
+
+#descr{
+	display: none;
+}

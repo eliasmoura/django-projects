@@ -1,0 +1,35 @@
+#topo {
+	background-image: url(/static/imagens/topo.png);
+	height:62px;
+	width: 1024px;
+	background-repeat:no-repeat;	
+	
+	padding: 0px;
+	margin: 0px;
+}
+#conteudo {
+	background-image: url(/static/imagens/palco.png); 
+	background-repeat: no-repeat;
+	width: 839px;
+	height: 728px;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+}
+
+footer {
+	position: relative;
+}
+
+video {
+	border-width: 10px;
+	border-color: black;
+	border-style: solid;
+}
+
+#tudo{
+	margin-right:auto;
+    margin-left:auto;
+	width: 1024;
+	height: 800;
+}

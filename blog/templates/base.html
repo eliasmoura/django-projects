@@ -1,0 +1,57 @@
+<html lang='pt-br'>
+	<head>
+		{%block head%}
+			{%block meta%}
+				<meta charset="utf-8" />
+				<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+				Remove this if you use the .htaccess -->
+				<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />-->
+
+				<meta name="description" content="" />
+				<meta name="author" content="Elias Alves Moura" />
+
+				<!--<meta name="viewport" content="width=device-width; initial-scale=1.0" />-->
+
+				<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+				<link rel="shortcut icon" href="/favicon.ico" />
+				<link rel="apple-touch-icon" href="/favicon.ico" />
+			{%endblock%}
+		
+			{%block style%}
+				<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/base-blog.css" />
+			{%endblock%}
+		
+		
+			{%block sript%}{%endblock%}
+			<title>{%block titulo%}AlMoura{%endblock%}</title>
+		{%endblock%}
+	</head>
+	<body>
+		<div id="tudo">
+			<div id="divhead"> 
+				{%block divhead%}
+				cabeçalho
+				{%endblock%}
+			</div>
+			<div class='menusuperior' id='menusuperio'>
+				{%block menusuperior%}
+				{%endblock%}
+			</div>
+			<div id="conteudo">
+				{%block conteudo%}
+				imformacoes sobre o Site<br />
+				{%endblock%}
+			</div>
+			<div id="menuLateral">
+				{%block menulateral%}
+				menu lateral
+				{%endblock%}
+			</div>
+		</div>
+		<!--<footer>
+			<p>
+				&copy; Copyright  by Elias Alves Moura
+			</p>
+		</footer>-->
+	</body>
+</html>
