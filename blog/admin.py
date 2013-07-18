@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
 from django.contrib import admin
-#from client.models import *
+from blog.models import *
 
-#admin.site.register(Doenca)
+admin.site.register(Postagem)
