@@ -25,7 +25,7 @@ DATABASES = {
         'NAME': 'meu_site',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
-        'PASSWORD': '',
+        'PASSWORD': 'A5eB72ERrSzx2Eg53GQk23H6Ze',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     },
