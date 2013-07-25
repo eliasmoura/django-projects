@@ -11,6 +11,14 @@
 
 	{%block script%}
 	<script type="text/javascript">
+		 String.format = function() {
+			var s = arguments[0];
+      		for (var i = 0; i < arguments.length - 1; i++) {       
+          		var reg = new RegExp("\\{" + i + "\\}", "gm");             
+          		s = s.replace(reg, arguments[i + 1]);
+      		}
+      		return s;
+  		}
 		var events = {};
 		events[new Date('06/20/2013')] = ['Valentines Day', 'mybold'];
 		events[new Date('07/19/2013')] = ['Payday', 'mybold'];
@@ -26,7 +34,10 @@
             				}
 						},
 						onSelect: function(data){
-							console.log(data);
+							d = data.split('/');
+							url = String.format('/blog/arquivo/{0}/{1}/{2}/', d[2],d[1],d[0]);
+							console.log(url);
+							location.href= url;
 						},
 						minDate: new Date(2007, 1 - 1, 1),
 						macDate: "+1m +1w",
@@ -42,7 +53,7 @@
 		$('button.bmenu').click(function(){
 			{%url 'categoria' as the_url%}
 			var categoriaurl ='{{the_url}}'+$(this).attr('id');
-			console.log();
+			
 			location.href=categoriaurl;
 		});
 	});
@@ -78,42 +89,71 @@
 {%block  menusuperior%}
 	<ul class='menu'>
 		<li  class='menu'>
-			<button  id='home' class='home'>Home</button>
+			<a  id='home' class='home'href="{% url 'home'%}">Home</a>
 		</li>
-		<li  class='menu'>
-			<button  id='projetos' class='bmenu' >Projetos</button>
-			<ul class='smenu' id='sprojetos'>
-				<li><button  id='simunares' class='bmenu' >SIMUNARES</button></li>
-				<li><button  id='django' class='bmenu' >Django</button></li>
-			</ul>
-		</li>
-		<li  class='menu'>
-			<button  id='programacao' class='bmenu'>Programação</button>
-			<ul class='smenu' id='sprogramação'>
-				<li><button  id='c++' class='bmenu'>C++</button></li>
-			</ul>
-		</li>
+		{%for categoria in categorias%}
+			<li  class='menu'>
+				<a  id='{{categoria.slug}}' class='bmenu' href="{{categoria.get_absolute_url}}">{{categoria.nome}}</a>
+				<ul class='smenu' id='s{{categoria.slug}}'>
+					{%for subcategoria in subcategorias%}
+						{%if subcategoria.categoria.nome == categoria.nome%}
+							<li><a  id='{{subcategoria.slug}}' class='bmenu' href="{{subcategoria.get_absolute_url}}">{{subcategoria.nome}}</a></li>
+
+						{%endif%}
+						{%endfor%}
+				</ul>
+			</li>
+		{%endfor%}
 	</ul>
 {%endblock%}
 {%block conteudo%}
-	<a  id='is' href="{%url 'categorias'%}">Home</a>
-	{%url 'categoria' 'ss' as the_url%}
-	{% if the_url %}
-  		<a href="{{ the_url }}">Link to optional stuff</a>
-	{% endif %}
-	{{the_url}}
+	{%for post in posts %}
+		<div class='post'>
+			<h2><a class='posttitulo' href="{{post.get_absolute_url}}">
+				{{post.titulo}}
+			</a></h2>
+			<div>
+				{{post.conteudo}}
+			</div>
+			<div class='tag'>
+				Tags:
+				<ul class='tag'>
+					{%for categoria in post.categorias%}
+						<li class='tag'><a class='tag'href="{{categoria.categoria.get_absolute_url}}">{{categoria.categoria.nome}}</a></li>
+					{%endfor%}
+					{%for categoria in post.subcategorias%}
+						<li class='tag'><a class='tag' href="{{categoria.subcategoria.get_absolute_url}}">{{categoria.subcategoria.nome}}</a></li>
+					{%endfor%}
+				</ul>
+				
+			</div>
+
+		</div>
+	{%endfor%}
+	{%if post%}
+		<div class='post'>
+			<h2>{{post.titulo}}</h2>
+			{{post.conteudo}}
+			<div class='tag'>
+				Tags:
+				<ul class='tag'>
+					{%for categoria in post.categorias%}
+						<li class='tag'><a class='tag' href="{{categoria.categoria.get_absolute_url}}">{{categoria.categoria.nome}}</a></li>
+					{%endfor%}
+					{%for categoria in post.subcategorias%}
+						<li class='tag'><a class='tag' href="{{categoria.subcategoria.get_absolute_url}}">{{categoria.subcategoria.nome}}</a></li>
+					{%endfor%}
+				</ul>
+				
+			</div>
+		</div>
+	{%endif%}
 {%endblock%}
 
 {%block menulateral%}
 	<div class='sobre' id='sobre'>
 		Sobre o autor:
-		Um <br/>
-		breve<br/>
-		resumo<br/>
-		sobre<br/>
-		o<br/>
-		autor<br/>
-		link para o texto copleto.
+		{{sobre.conteudo|truncatewords:30}}
 	</div>
 
 	<div class='calendario' id='calendario'>

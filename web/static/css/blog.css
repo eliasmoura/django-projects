@@ -38,6 +38,27 @@ div#conteudo{
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 }
+div.post{
+	padding: 10px;
+	margin-left: 5px;
+}
+a.posttitulo{
+	text-decoration: none;
+	color: #000;
+}
+div.tag ul.tag{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+div.tag ul.tag li{
+	display: inline;
+}
+
+div ul li a.tag{
+	color: blue;
+	text-decoration: none;
+	font-size: 80%;
+}
 
 /*men categorias*/
 div.menusuperior{
@@ -51,6 +72,7 @@ div.menusuperior ul {
 	margin-right: auto;
 	padding: 0px;
 	width: 400px;
+	min-height: 30;
 }
 div.menusuperior ul.menu li.menu{
 	border-right:1px solid #c0c0c0;
@@ -75,6 +97,7 @@ div.menusuperior ul.menu li.menu button:hover{
 div.menusuperior ul.menu li ul.smenu{
 	display: none;
 	margin: 0px;
+	margin-top: 1px;
 	padding: 0px;
 	top: 20px;
 	left: 0px;
@@ -83,7 +106,7 @@ div.menusuperior ul.menu li ul.smenu{
 }
 div.menusuperior ul.menu li ul.smenu li{
 	border:1px solid #c0c0c0; 
-	width: 100px;
+	width: 109px;
 	left: 0px;
 	display: block;
 	text-align: left;
@@ -92,32 +115,32 @@ div.menusuperior ul.menu li ul.smenu li{
 div.menusuperior ul.menu li:hover ul.smenu{
 	display: block;
 }
+ul{
+	width: 318px;
+	height: 30px;
+}
 li.menu{
-	width: 100px;
+	width: 109px;
+	height: 30px;
 }
-a.menu{
+a.home, a.bmenu{
 	color:#333;
-	width: 100px;
+	margin: 0px;
+	background-color: #fff;
+	width: 109px;
+	margin-bottom: 1px;
 	height: 30px;
+	padding: 1px;
+	border: 1px solid #000;
 	text-decoration: none;
-}
-button.bmenu{
-	color:#333;
-	width: 100px;
-	height: 30px;
-	text-decoration: none;
-}
-button.home{
-	color:#333;
-	width: 100px;
-	height: 30px;
-	text-decoration: none;
-}
-input.menu{
-	width: 100px;
-	height: 30px;
+	text-align: center;
+	vertical-align: middle;
 }
 
+a.bmenu:hover,a.home:hover {
+	background-color: #D6D6D6;
+	color:  #6D6D6D;
+}
 
 /*menu lateral*/
 div#menulateral{
@@ -130,8 +153,6 @@ div#calendario{
 	margin-top: 10px;
 }
 
-
-
 /*datepiker*/
 .mybold>a.ui-state-default {
     font-weight:bold;
@@ -140,7 +161,6 @@ div#calendario{
 }
 .ui-state-active {
 	border: 1px solid #fbd850;
-	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;/*bold*/
 	color: #eb8f00;
 }
@@ -151,16 +171,19 @@ div#calendario{
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus{
 	border: 1px solid #fbcb09;
-	background: #fdf5ce url(images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;/*bold*/
 	color: #c77405;
 }
 .ui-state-default {
 	border: 1px solid #cccccc;
-	background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;/*bold*/
 	color: #1c94c4;
 }
 div.ui-datepicker{
  font-size:12px;
+}
+
+div.post div ul {
+	display: inline;
+	list-style: none;
 }
