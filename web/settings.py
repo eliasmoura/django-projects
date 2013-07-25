@@ -13,11 +13,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'meu_site',                      # Or path to database file if using sqlite3.
+        'NAME': 'ddhql6mh9jrphh',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'elias',
-        'PASSWORD': '123',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER': 'sfvxeggjkefxbo',
+        'PASSWORD': 'A5eB72ERrSzx2Eg53GQk23H6Ze',
+        'HOST': 'ec2-54-225-102-116.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',  
         },
     'meusite': {
@@ -181,11 +181,11 @@ LOGGING = {
 
 
 # Parse database configuration from $DATABASE_URL
-#import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
